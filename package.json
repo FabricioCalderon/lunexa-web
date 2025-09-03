@@ -1,4 +1,6 @@
 {
+  
+
   "name": "lunexa-web",
   "version": "0.1.0",
   "private": true,
@@ -19,6 +21,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -42,5 +45,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "12.x",
+    "npm": "10.x"
   }
 }
+
