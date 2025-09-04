@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom"; // ✅ Import Routes y Route
+import { BrowserRouter as Router } from "react-router-dom"; // para compatibilidad con routing
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -20,22 +20,18 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <StarBackground />
       <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/benefits" element={<Benefits />} />
-        <Route path="/clientes" element={<Clientes />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-
+      <Home />
+      <Services />
+      <About />
+      <Benefits />
+      <Clientes />
+      <Contact />
       <InstagramButton />
       <Footer />
-    </>
+    </Router>
   );
 }
 
