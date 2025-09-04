@@ -27,7 +27,7 @@ function Navbar() {
         if (section) {
           const top = section.offsetTop;
           const height = section.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
+          if (scrollPos >= top && scrollPos < top + height) { 
             setActive(sectionId);
           }
         }
@@ -36,7 +36,7 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScrollEvent);
     return () => window.removeEventListener("scroll", handleScrollEvent);
-  }, []);
+  }, [sections]);
 
   return (
     <nav className="navbar">
@@ -50,7 +50,7 @@ function Navbar() {
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
           {sections.map((sec) => (
             <li key={sec}>
-              <a
+              <button
                 onClick={() => handleScroll(sec)}
                 className={active === sec ? "active" : ""}
               >
@@ -60,7 +60,7 @@ function Navbar() {
                  sec === "benefits" ? t("beneficios.titulo", "Beneficios") :
                  sec === "clientes" ? t("clientes", "Clientes") :
                  t("contact", "Contacto")}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
