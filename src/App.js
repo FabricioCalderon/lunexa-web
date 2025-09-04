@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom"; // ✅ Import Routes y Route
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import StarBackground from "./components/StarBackground";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -21,12 +23,16 @@ function App() {
     <>
       <StarBackground />
       <Navbar />
-      <Home />
-      <Services />
-      <About />
-      <Benefits/>
-      <Clientes />
-      <Contact />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/benefits" element={<Benefits />} />
+        <Route path="/clientes" element={<Clientes />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
       <InstagramButton />
       <Footer />
     </>

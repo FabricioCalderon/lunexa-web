@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram} from "react-icons/fa";
 import { motion } from "framer-motion";
 import Gym from "../assets/Gym.png"; 
 import Tienda from "../assets/Tienda.png"; 

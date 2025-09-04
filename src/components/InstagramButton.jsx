@@ -24,7 +24,7 @@ function InstagramButton() {
         cursor: "pointer",
         zIndex: 1000,
         animation: "pulse 1.8s infinite",
-        position: "fixed",
+        
       }}
       title="Escríbeme en Instagram 📩"
     >
