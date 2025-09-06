@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import "./i18n";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import StarBackground from "./components/StarBackground";
@@ -9,7 +10,7 @@ import About from "./pages/About";
 import Benefits from "./pages/Benefits";
 import Contact from "./pages/Contact";
 import Footer from './components/Footer';
-import InstagramButton from "./components/InstagramButton";
+import InstagramButton from "./components/InstagramButton"; 
 import Clientes from "./pages/Clientes";
 import "./index.css"; // o App.css, según donde estén los estilos globales
 
