@@ -51,7 +51,9 @@ function Navbar() {
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
           {sections.map((sec) => (
             <li key={sec}>
-              <a onClick={handleClick}>
+              
+              <a onClick={() => handleScroll(sec)} className={active === sec ? "active" : ""}>
+                
                 {sec === "home" ? t("home", "Inicio") :
                  sec === "services" ? t("services", "Servicios") :
                  sec === "about" ? t("about", "Quiénes Somos") :
