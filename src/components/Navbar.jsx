@@ -52,8 +52,15 @@ function Navbar() {
           {sections.map((sec) => (
             <li key={sec}>
               
-              <a onClick={() => handleScroll(sec)} className={active === sec ? "active" : ""}>
-                
+              <a 
+                href={`#${sec}`} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll(sec);
+                }}
+                className={active === sec ? "active" : ""}
+              >
+
                 {sec === "home" ? t("home", "Inicio") :
                  sec === "services" ? t("services", "Servicios") :
                  sec === "about" ? t("about", "Quiénes Somos") :
