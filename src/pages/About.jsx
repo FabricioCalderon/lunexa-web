@@ -7,10 +7,10 @@ function About() {
     <>
       {/* SECCION SOBRE NOSOTROS */}
       <section
-        id="about"
+        id="about" 
         style={{
           padding: "60px 20px",
-          background: "rgba(58,0,102,0.7)",
+          background: "linear-gradient(135deg, #0f001a, #1a0033)",
           borderRadius: "20px",
           margin: "20px",
           // boxShadow: "0 0 20px #60A5FA",

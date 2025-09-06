@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import { BrowserRouter as Router } from "react-router-dom"; // para compatibilidad con routing
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import StarBackground from "./components/StarBackground";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -13,6 +11,7 @@ import Contact from "./pages/Contact";
 import Footer from './components/Footer';
 import InstagramButton from "./components/InstagramButton";
 import Clientes from "./pages/Clientes";
+import "./index.css"; // o App.css, según donde estén los estilos globales
 
 function App() {
   useEffect(() => {
@@ -20,18 +19,18 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
       <StarBackground />
       <Navbar />
-      <Home />
-      <Services />
-      <About />
-      <Benefits />
-      <Clientes />
-      <Contact />
+      <section id="home"><Home /></section>
+      <section id="services"><Services /></section>
+      <section id="about"><About /></section>
+      <section id="benefits"><Benefits /></section>
+      <section id="clientes"><Clientes /></section>
+      <section id="contact"><Contact /></section>
       <InstagramButton />
       <Footer />
-    </Router>
+    </>
   );
 }
 

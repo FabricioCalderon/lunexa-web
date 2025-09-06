@@ -66,7 +66,8 @@ function Services() {
       id="services"
       style={{
         padding: "80px 20px",
-        background: "linear-gradient(135deg, #0f001a, #1a0033)",
+        background: "rgba(58,0,102,0.7)",
+        borderRadius:"20px",
         color: "white",
         textAlign: "center",
       }}
@@ -252,7 +253,7 @@ function Services() {
                 </motion.button>
 
                 <motion.a
-                  href="https://www.instagram.com/lunexasoft" // 🔹 se puede enlazar a tu sección de contacto
+                  href="#contact" // 🔹 se puede enlazar a tu sección de contacto
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   style={{

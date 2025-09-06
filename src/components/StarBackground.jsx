@@ -10,19 +10,26 @@ function StarBackground() {
     let stars = [];
     const numStars = 100;
 
-    for (let i = 0; i < numStars; i++) {
-      stars.push({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        radius: Math.random() * 1.5,
-        speed: Math.random() * 0.5
-      });
-    }
+    const initStars = () => {
+      stars = [];
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          radius: Math.random() * 1.5,
+          speed: Math.random() * 0.5,
+        });
+      }
+    };
 
     const drawStars = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // fondo oscuro
+      ctx.fillStyle = "#0b0f19";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // estrellas
       ctx.fillStyle = "white";
-      stars.forEach(star => {
+      stars.forEach((star) => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
         ctx.fill();
@@ -30,7 +37,7 @@ function StarBackground() {
     };
 
     const animate = () => {
-      stars.forEach(star => {
+      stars.forEach((star) => {
         star.y += star.speed;
         if (star.y > window.innerHeight) {
           star.y = 0;
@@ -41,9 +48,19 @@ function StarBackground() {
       requestAnimationFrame(animate);
     };
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // inicializar canvas
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initStars();
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
     animate();
+
+    return () => window.removeEventListener("resize", resizeCanvas);
   }, []);
 
   return (
@@ -53,7 +70,7 @@ function StarBackground() {
         position: "fixed",
         top: 0,
         left: 0,
-        zIndex: -1
+        zIndex: -1,
       }}
     />
   );

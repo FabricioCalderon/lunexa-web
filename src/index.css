@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #0B0014, #1A002B, #3A0066); /* casi negro con violeta */
+  background: transparent;
   color: white;
 }
 

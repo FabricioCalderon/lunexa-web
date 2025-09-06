@@ -45,7 +45,7 @@ function Benefits() {
         {t("beneficios.titulo", "Beneficios de elegirnos")}
       </motion.h2>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "25px", justifyItems: "center" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "20px", justifyItems: "center" }}>
         {beneficios.map((b, i) => (
           <motion.div
             key={i}
@@ -58,7 +58,7 @@ function Benefits() {
               background: `linear-gradient(135deg, ${b.color}80, ${b.color}40)`,
               borderRadius: "20px",
               padding: "25px",
-              width: "100%",
+              width: "80%",
               maxWidth: "185px",
               textAlign: "center",
               color: "white",

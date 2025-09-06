@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "./Navbar.css";
 import logolunexa1 from "../assets/logolunexa1.png"; 
 import { useTranslation } from "react-i18next";
@@ -8,7 +8,8 @@ function Navbar() {
   const [active, setActive] = useState("home"); // sección activa
   const { t } = useTranslation();
 
-  const sections = ["home", "services", "about", "benefits","clientes", "contact"];
+  // 🔹 UseMemo para que sections no cambie en cada render
+  const sections = useMemo(() => ["home", "services", "about", "benefits", "clientes", "contact"], []);
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
@@ -36,7 +37,7 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScrollEvent);
     return () => window.removeEventListener("scroll", handleScrollEvent);
-  }, [sections]);
+  }, [sections]); // ahora está bien
 
   return (
     <nav className="navbar">
@@ -50,7 +51,7 @@ function Navbar() {
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
           {sections.map((sec) => (
             <li key={sec}>
-              <button
+              <a
                 onClick={() => handleScroll(sec)}
                 className={active === sec ? "active" : ""}
               >
@@ -60,7 +61,7 @@ function Navbar() {
                  sec === "benefits" ? t("beneficios.titulo", "Beneficios") :
                  sec === "clientes" ? t("clientes", "Clientes") :
                  t("contact", "Contacto")}
-              </button>
+              </a>
             </li>
           ))}
         </ul>
