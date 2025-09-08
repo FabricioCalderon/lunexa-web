@@ -65,10 +65,6 @@ function Services() {
     <section
       id="services"
       style={{
-        padding: "80px 20px",
-        background: "rgba(58,0,102,0.7)",
-        borderRadius:"20px",
-        color: "white",
         textAlign: "center",
       }}
     >

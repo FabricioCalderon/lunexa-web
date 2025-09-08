@@ -1,6 +1,6 @@
 /* =========================
    NAVBAR PRINCIPAL
-========================= */
+========================= */ 
 .navbar {
   height: 50px;
   display: flex;
@@ -141,3 +141,31 @@
     text-shadow: 0 0 10px #FF3CAC;
   }
 }
+
+.services-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  #services {
+    padding: 40px 10px; /* menos padding en celu */
+  }
+
+  .services-title {
+    font-size: 1.8rem; /* título más chico en celu */
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 1.5rem; /* aún más chico en pantallas muy chicas */
+  }
+}
+
+
+
+
+
+
+
