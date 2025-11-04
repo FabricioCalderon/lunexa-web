@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { FaInstagram} from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
-import Gym from "../assets/Gym.png"; 
-import Tienda from "../assets/Tienda.png"; 
+import { Helmet } from "react-helmet-async"; // ✅ Importamos Helmet
+import Gym from "../assets/Gym.png";
+import Tienda from "../assets/Tienda.png";
 
 function Clientes() {
   const casosExito = [
@@ -32,6 +33,27 @@ function Clientes() {
 
   return (
     <section id="clientes" style={{ padding: "60px 20px", color: "white" }}>
+      {/* 🧠 SEO DINÁMICO */}
+      <Helmet>
+        <title>Clientes | Lunexa</title>
+        <meta
+          name="description"
+          content="Casos de éxito de Lunexa: sistemas a medida para tiendas, gimnasios y más. Descubre cómo transformamos negocios con software personalizado."
+        />
+        <meta
+          name="keywords"
+          content="clientes lunexa, software a medida, sistemas personalizados, desarrollo web, casos de éxito, stilo tradi, gimnasio el sirio"
+        />
+        <meta property="og:title" content="Clientes | Lunexa" />
+        <meta
+          property="og:description"
+          content="Casos de éxito de Lunexa en desarrollo de software: tiendas, gimnasios y más. Software eficiente, escalable y moderno."
+        />
+        <meta property="og:image" content="https://lunexa.vercel.app/lunexa-preview.png" />
+        <meta property="og:url" content="https://lunexa.vercel.app/clientes" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
       <h2 style={{ textAlign: "center", marginBottom: "40px", fontSize: "3rem" }}>
         Clientes
       </h2>
@@ -87,7 +109,7 @@ function ClienteCard({ caso }) {
       transition={{ duration: 0.8 }}
       style={{
         borderRadius: "20px",
-        padding: "50px 20px 20px 20px", // ↑ más espacio arriba para el badge
+        padding: "50px 20px 20px 20px",
         width: "90%",
         maxWidth: "600px",
         background: "rgba(58,0,102,0.7)",
@@ -102,7 +124,7 @@ function ClienteCard({ caso }) {
         transition={{ repeat: Infinity, duration: 2 }}
         style={{
           position: "absolute",
-          top: "20px", // más arriba de la imagen
+          top: "20px",
           left: "5%",
           transform: "translateX(-50%)",
           background: "rgba(255, 60, 172, 0.85)",
@@ -164,7 +186,6 @@ function ClienteCard({ caso }) {
             <FaInstagram />
           </a>
         )}
-        
       </div>
 
       <a

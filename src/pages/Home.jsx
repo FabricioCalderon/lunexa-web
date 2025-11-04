@@ -1,8 +1,24 @@
 import React from "react";
 import { FaInstagram } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
   return (
+  <>
+      <Helmet>
+        <title>Lunexa | Desarrollo de Software y Soluciones Web</title>
+        <meta
+          name="description"
+          content="Lunexa ofrece desarrollo de software, sitios web modernos y sistemas personalizados para potenciar tu negocio digital."
+        />
+        <meta name="keywords" content="Lunexa, desarrollo web, software a medida, sistemas, programación, Argentina, Django, React" />
+        <meta property="og:title" content="Lunexa | Desarrollo de Software y Soluciones Web" />
+        <meta property="og:description" content="Creamos soluciones tecnológicas adaptadas a tu negocio. Software, sistemas y diseño web profesional." />
+        <meta property="og:image" content="https://lunexa.vercel.app/lunexa-banner.png" />
+        <meta property="og:url" content="https://lunexa.vercel.app/" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
     <section
       id="home"
       style={{
@@ -114,6 +130,8 @@ function Home() {
         </a>
       </div>
     </section>
+  </>
+
   );
 }
 

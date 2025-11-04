@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { FaLaptopCode, FaCogs, FaShoppingCart, FaTools } from "react-icons/fa";
 
 function Services() {
@@ -68,6 +69,27 @@ function Services() {
         textAlign: "center",
       }}
     >
+      {/* 🔍 SEO Tags */}
+      <Helmet>
+        <title>Servicios | Lunexa</title>
+        <meta
+          name="description"
+          content="Descubre los servicios de Lunexa: desarrollo web, automatización, e-commerce y soporte técnico. Soluciones digitales a medida para tu negocio."
+        />
+        <meta
+          name="keywords"
+          content="Lunexa, desarrollo web, software a medida, automatización, e-commerce, soporte técnico, desarrollo de sistemas, Argentina"
+        />
+        <meta property="og:title" content="Servicios | Lunexa" />
+        <meta
+          property="og:description"
+          content="Conocé los servicios que Lunexa ofrece: sitios web, sistemas personalizados y automatización de procesos."
+        />
+        <meta property="og:image" content="https://lunexa.vercel.app/lunexa-banner.png" />
+        <meta property="og:url" content="https://lunexa.vercel.app/servicios" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
       <h2 style={{ fontSize: "2.5rem", marginBottom: "40px" }}>
         Nuestros Servicios
       </h2>
@@ -148,7 +170,7 @@ function Services() {
         ))}
       </div>
 
-      {/* Modal con glassmorphism */}
+      {/* Modal con detalles */}
       <AnimatePresence>
         {selectedService && (
           <motion.div
@@ -170,7 +192,7 @@ function Services() {
               alignItems: "center",
               zIndex: 999,
             }}
-            onClick={() => setSelectedService(null)} // cerrar al clickear afuera
+            onClick={() => setSelectedService(null)}
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -191,7 +213,6 @@ function Services() {
               }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Promo destacada */}
               <div
                 style={{
                   background: "linear-gradient(135deg, #FF3CAC, #9B5DE5)",
@@ -229,7 +250,6 @@ function Services() {
                 ))}
               </ul>
 
-              {/* Botones */}
               <div style={{ display: "flex", gap: "15px", justifyContent: "center" }}>
                 <motion.button
                   onClick={() => setSelectedService(null)}
@@ -249,7 +269,9 @@ function Services() {
                 </motion.button>
 
                 <motion.a
-                  href="#contact" // 🔹 se puede enlazar a tu sección de contacto
+                  href="https://ig.me/m/lunexasoft"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   style={{
@@ -262,7 +284,7 @@ function Services() {
                     boxShadow: "0 0 15px rgba(255, 60, 172, 0.5)",
                   }}
                 >
-                  Informacion
+                  Información
                 </motion.a>
               </div>
             </motion.div>

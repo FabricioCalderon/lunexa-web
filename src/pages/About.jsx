@@ -1,11 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import Aboutimg from "../assets/Aboutimg.png";
-import "../styles/style.css"; // 📌 importamos el CSS
+import "../styles/style.css";
 
 function About() {
   return (
     <>
+      {/* 🧠 SEO Tags */}
+      <Helmet>
+        <title>Sobre Nosotros | Lunexa Software</title>
+        <meta
+          name="description"
+          content="En Lunexa desarrollamos páginas web, tiendas online y software de administración a medida. Soluciones escalables, rápidas y diseñadas para hacer crecer tu negocio."
+        />
+        <meta
+          name="keywords"
+          content="Lunexa, desarrollo web, software a medida, diseño web, tiendas online, landing pages, automatización, sistemas, Argentina"
+        />
+        <meta name="author" content="Lunexa Software" />
+        <meta property="og:title" content="Sobre Nosotros | Lunexa Software" />
+        <meta
+          property="og:description"
+          content="Creamos soluciones tecnológicas modernas y escalables para impulsar tu negocio."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={Aboutimg} />
+        <meta property="og:url" content="https://lunexa.com/sobre-nosotros" />
+      </Helmet>
+
       {/* SECCION SOBRE NOSOTROS */}
       <section id="about" className="about-section">
         <h2 className="about-title">Sobre Nosotros</h2>

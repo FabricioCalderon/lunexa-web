@@ -2,16 +2,37 @@ import React from "react";
 import { FaInstagram } from "react-icons/fa";
 
 function InstagramButton() {
+  const handleClick = (e) => {
+    e.preventDefault(); // Evita que el <a> abra el link directamente
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Intenta abrir directamente la app de Instagram
+      window.location.href = "instagram://user?username=lunexasoft";
+
+      // Si no se abre la app, usa el link web como fallback
+      setTimeout(() => {
+        window.open("https://ig.me/m/lunexasoft", "_blank");
+      }, 700);
+    } else {
+      // En PC abre el chat web directamente
+      window.open("https://ig.me/m/lunexasoft", "_blank");
+    }
+  };
+
   return (
     <a
-      href="https://ig.me/m/lunexasoft" // 👉 reemplaza por tu usuario de IG
+      href="https://ig.me/m/lunexasoft"
+      onClick={handleClick}
       target="_blank"
       rel="noopener noreferrer"
       style={{
         position: "fixed",
         bottom: "20px",
         right: "20px",
-        background: "linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)",
+        background:
+          "linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)",
         color: "white",
         borderRadius: "50%",
         width: "60px",
@@ -24,7 +45,7 @@ function InstagramButton() {
         cursor: "pointer",
         zIndex: 1000,
         animation: "pulse 1.8s infinite",
-        
+        textDecoration: "none",
       }}
       title="Escríbeme en Instagram 📩"
     >
